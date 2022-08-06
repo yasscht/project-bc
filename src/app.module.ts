@@ -22,7 +22,7 @@ import { Player } from './entities/player.entitie';
     }),
     TypeOrmModule.forFeature([Player]),
   ],
-  controllers: [AppController],
+  controllers: [AppController, PlayerController],
   providers: [AppService, PlayerService],
 })
 export class AppModule {}
