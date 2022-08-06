@@ -9,6 +9,8 @@ import { Player } from './entities/player.entitie';
 
 @Module({
   imports: [
+    PlayerModule,
+    TypeOrmModule.forFeature([Player]),
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'localhost',
@@ -20,9 +22,9 @@ import { Player } from './entities/player.entitie';
       synchronize: true,
       autoLoadEntities: true,
     }),
-    TypeOrmModule.forFeature([Player]),
   ],
-  controllers: [AppController, PlayerController],
-  providers: [AppService, PlayerService],
+
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
